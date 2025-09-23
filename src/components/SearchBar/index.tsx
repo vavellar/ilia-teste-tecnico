@@ -1,18 +1,20 @@
-'use client'
+"use client";
 
-import {useState} from "react";
+interface SearchBarProps {
+    value: string;
+    onChange: (value: string) => void;
+}
 
-export function SearchBar() {
-    const [search, setSearch ] = useState('')
+export function SearchBar({ value, onChange }: SearchBarProps) {
     return (
         <div className="w-full max-w-md mb-8">
             <input
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
+                value={value}
+                onChange={(e) => onChange(e.target.value)}
                 type="text"
                 placeholder="Search for a planet..."
                 className="w-full p-2 border border-gray-300 rounded"
             />
         </div>
-    )
+    );
 }
