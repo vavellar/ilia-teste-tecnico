@@ -1,8 +1,8 @@
 "use client";
 
 import { PlanetCard } from "../PlanetCard";
-import { PlanetCardSkeleton } from "@/components/PlanetCardSkeleton";
 import type { Planet } from "@/app/interfaces";
+import {PlanetCardSkeleton} from "@/app/components/PlanetCardSkeleton";
 
 interface Props {
     planets: Planet[];

@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { PlanetList } from "@/components/PlanetList";
 import type { ApiResponse } from "@/app/interfaces";
-import { SearchBar } from "@/components/SearchBar";
+import {SearchBar} from "@/app/components/SearchBar";
+import {PlanetList} from "@/app/components/PlanetList";
 
 export default function Home() {
     const [planets, setPlanets] = useState<any[]>([]);
