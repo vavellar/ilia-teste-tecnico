@@ -41,7 +41,7 @@ export function PlanetList({ planets, nextUrl, prevUrl, isLoading, onFetchPage }
         <div className="grid gap-4 w-full">
             <div className="flex mt-8 w-full justify-between flex-col sm:flex-row">
                 <button
-                    className="px-4 py-2 bg-gray-600 text-white rounded disabled:opacity-50 cursor-pointer"
+                    className="px-4 py-2 bg-gray-600 text-white rounded disabled:opacity-50 cursor-pointer mb-2 sm:mb-0"
                     onClick={() => prevUrl && onFetchPage(prevUrl)}
                     disabled={!prevUrl}
                 >
