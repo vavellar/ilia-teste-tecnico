@@ -10,7 +10,7 @@ export default function Home() {
     const [nextUrl, setNextUrl] = useState<string | null>(null);
     const [prevUrl, setPrevUrl] = useState<string | null>(null);
     const [searchTerm, setSearchTerm] = useState<string>("");
-    const [loading, setLoading] = useState<boolean>(false);
+    const [loading, setLoading] = useState<boolean>(true);
 
     const fetchPlanets = async (url?: string) => {
         setLoading(true);
