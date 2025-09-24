@@ -18,8 +18,8 @@ describe("Home - Star Wars Planets", () => {
   it("Should show the planets in alphabetical order", () => {
     cy.get("[data-cy=planet-item] h2").then(($names) => {
       const uiNames = $names.toArray().map((el) => el.innerText.trim());
-      const sorted = [...uiNames].sort((a, b) => a.localeCompare(b));
-      expect(uiNames).to.deep.equal(sorted);
+
+      expect(uiNames).to.deep.equal(["Alderaan", "Tatooine",]);
     });
   });
 
