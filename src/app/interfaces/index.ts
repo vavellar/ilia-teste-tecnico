@@ -5,6 +5,9 @@ export interface Planet {
     diameter: string;
     films: string[];
     url: string;
+}
+
+export interface PlanetDetails extends Planet {
     rotation_period: string;
     orbital_period: string;
     gravity: string;

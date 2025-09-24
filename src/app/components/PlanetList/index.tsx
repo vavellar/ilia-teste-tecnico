@@ -3,7 +3,7 @@
 import { PlanetCard } from "../PlanetCard";
 import type { Planet } from "@/app/interfaces";
 import {PlanetCardSkeleton} from "@/app/components/PlanetCardSkeleton";
-
+import React from "react";
 interface PlanetListProps {
     planets: Planet[];
     nextUrl: string | null;

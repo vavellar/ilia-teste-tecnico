@@ -2,16 +2,12 @@ import React from "react";
 import { render, screen, waitFor } from "@testing-library/react";
 import { vi } from "vitest";
 import { PlanetCard } from './index'
+import {Planet} from "@/app/interfaces";
 
-const planetMock = {
+const planetMock: Planet = {
     name: "Tatooine",
     climate: "arid",
     terrain: "desert",
-    rotation_period: "23",
-    orbital_period: "304",
-    residents: [],
-    population: "200000",
-    gravity: "1 standard",
     url: "https://swapi.dev/api/planets/1/",
     diameter: "10465",
     films: [
