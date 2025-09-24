@@ -1,5 +1,5 @@
 import React from "react";
-import {Planet} from "@/app/interfaces";
+import {Planet, PlanetDetails} from "@/app/interfaces";
 
 interface Resident {
     name: string;
@@ -21,7 +21,7 @@ export default async function PlanetDetail({ id }: PlanetDetailProps) {
     if (!planetRes.ok) {
         return <div className="text-center text-red-500">Failed to load planet data.</div>;
     }
-    const planet: Planet = await planetRes.json();
+    const planet: PlanetDetails = await planetRes.json();
 
 
     const residents: Resident[] = await Promise.all(
