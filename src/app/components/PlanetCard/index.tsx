@@ -20,7 +20,6 @@ export function PlanetCard({ planet }: PlanetCardProps) {
     const id = planet.url.split("/").filter(Boolean).pop();
 
     useEffect(() => {
-        debugger
         const fetchFilms = async () => {
             setIsLoading(true)
             try {
