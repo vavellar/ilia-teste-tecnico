@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import type { Planet } from "@/app/interfaces";
 import Link from "next/link";
+import React from "react"
+
 
 interface Film {
     title: string;
@@ -39,6 +41,8 @@ export function PlanetCard({ planet }: PlanetCardProps) {
         }
     }, [planet.films]);
 
+    console.log(films)
+
     return (
         <div className="w-full shadow-md rounded-lg p-6 mb-4 bg-gray-800 text-white text-center">
             <Link href={`/planets/${id}`} className="text-blue-400 hover:underline mb-4 inline-block">
@@ -64,7 +68,7 @@ export function PlanetCard({ planet }: PlanetCardProps) {
                 </div>
             ) : (
                 <h3 className="text-md mt-4 font-semibold mb-2 text-yellow-400">
-                    This planet does not appear in films
+                    No films available
                 </h3>
             )}
         </div>
