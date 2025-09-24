@@ -1,5 +1,5 @@
 import React from "react";
-import {Planet, PlanetDetails} from "@/app/interfaces";
+import {PlanetDetails} from "@/app/interfaces";
 
 interface Resident {
     name: string;
@@ -15,6 +15,7 @@ interface PlanetDetailProps {
 }
 
 export default async function PlanetDetail({ id }: PlanetDetailProps) {
+
 
     const planetRes = await fetch(`https://swapi.dev/api/planets/${id}/`);
 
