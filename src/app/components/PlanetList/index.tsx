@@ -4,7 +4,7 @@ import { PlanetCard } from "../PlanetCard";
 import type { Planet } from "@/app/interfaces";
 import {PlanetCardSkeleton} from "@/app/components/PlanetCardSkeleton";
 
-interface Props {
+interface PlanetListProps {
     planets: Planet[];
     nextUrl: string | null;
     prevUrl: string | null;
@@ -12,7 +12,7 @@ interface Props {
     onFetchPage: (url: string) => void;
 }
 
-export function PlanetList({ planets, nextUrl, prevUrl, isLoading, onFetchPage }: Props) {
+export function PlanetList({ planets, nextUrl, prevUrl, isLoading, onFetchPage }: PlanetListProps) {
 
     const orderByName = (list: Planet[]) => {
         return list.sort((a: Planet, b: Planet) => a.name.localeCompare(b.name));
@@ -60,10 +60,7 @@ export function PlanetList({ planets, nextUrl, prevUrl, isLoading, onFetchPage }
               {orderByName(planets).map((planet) => (
                   <PlanetCard
                       key={planet.name}
-                      name={planet.name}
-                      url={planet.url}
-                      climate={planet.climate}
-                      terrain={planet.terrain}
+                      planet={planet}
                   />
               ))}
             </div>

@@ -1,16 +1,5 @@
 import React from "react";
-
-interface Planet {
-    name: string;
-    rotation_period: string;
-    orbital_period: string;
-    diameter: string;
-    climate: string;
-    gravity: string;
-    terrain: string;
-    population: string;
-    residents: string[];
-}
+import {Planet} from "@/app/interfaces";
 
 interface Resident {
     name: string;
@@ -67,8 +56,11 @@ export default async function PlanetDetail({ id }: PlanetDetailProps) {
     return (
         <main className="flex flex-col items-center p-6">
             <div className="w-full max-w-3xl shadow-md rounded-lg p-6 mb-6 bg-gray-800">
-                <h1 className="text-3xl font-bold mb-4">{planet.name}</h1>
-                <ul className="space-y-2">
+                <h1 className="text-3xl font-bold mb-4 text-yellow-400 text-center">
+                    Planet Details
+                </h1>
+                <ul className="space-y-2 text-center">
+                    <li className="text-xl"><strong>Name:</strong> <strong>{planet.name}</strong></li>
                     <li><strong>Rotation period:</strong> {planet.rotation_period}</li>
                     <li><strong>Orbital period:</strong> {planet.orbital_period}</li>
                     <li><strong>Diameter:</strong> {planet.diameter}</li>
@@ -79,35 +71,29 @@ export default async function PlanetDetail({ id }: PlanetDetailProps) {
                 </ul>
             </div>
 
-            {residents.length > 0 && (
-                <div className="w-full max-w-3xl shadow-md rounded-lg p-6 bg-gray-800">
-                    <h2 className="text-2xl font-semibold mb-4">Residents</h2>
-                    {residents.map((resident, idx) => (
-                        <div key={idx} className="mb-4 border-b pb-4">
-                            <p><strong>Name:</strong> {resident.name}</p>
-                            <p><strong>Hair color:</strong> {resident.hair_color}</p>
-                            <p><strong>Eye color:</strong> {resident.eye_color}</p>
-                            <p><strong>Gender:</strong> {resident.gender}</p>
-
-                            {resident.species.length > 0 && (
-                                <ul className="ml-4 mt-2 list-disc">
-                                    {resident.species.map((s, i) => (
-                                        <li key={i}><strong>Species:</strong> {s.name}</li>
-                                    ))}
-                                </ul>
-                            )}
-
-                            {resident.vehicles.length > 0 && (
-                                <ul className="ml-4 mt-2 list-disc">
-                                    {resident.vehicles.map((v, i) => (
-                                        <li key={i}><strong>Vehicle:</strong> {v.name} - {v.model}</li>
-                                    ))}
-                                </ul>
-                            )}
+            <div className="w-full max-w-3xl shadow-md rounded-lg p-6 mb-6 bg-gray-800">
+                {residents.length > 0 ? (
+                    <>
+                        <h2 className="text-3xl font-semibold mb-4 text-center text-yellow-400">
+                            Residents
+                        </h2>
+                        <div className="space-y-4">
+                            {residents.map((resident, idx) => (
+                                <div key={idx} className="p-4 border rounded-lg bg-gray-700">
+                                    <p><strong>Name:</strong> {resident.name}</p>
+                                    <p><strong>Hair color:</strong> {resident.hair_color}</p>
+                                    <p><strong>Eye color:</strong> {resident.eye_color}</p>
+                                    <p><strong>Gender:</strong> {resident.gender}</p>
+                                </div>
+                            ))}
                         </div>
-                    ))}
-                </div>
-            )}
+                    </>
+                ) : (
+                    <h2 className="text-2xl font-semibold mb-4 text-center text-red-800">
+                        No residents on this planet
+                    </h2>
+                )}
+            </div>
         </main>
     );
 }

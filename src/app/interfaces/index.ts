@@ -5,6 +5,11 @@ export interface Planet {
     diameter: string;
     films: string[];
     url: string;
+    rotation_period: string;
+    orbital_period: string;
+    gravity: string;
+    population: string;
+    residents: string[];
 }
 
 export interface ApiResponse {
