@@ -9,6 +9,7 @@ export function SearchBar({ value, onChange }: SearchBarProps) {
     return (
         <div className="w-full max-w-md mb-8">
             <input
+                data-cy="search-bar"
                 value={value}
                 onChange={(e) => onChange(e.target.value)}
                 type="text"

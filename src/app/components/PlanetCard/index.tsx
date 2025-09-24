@@ -41,11 +41,10 @@ export function PlanetCard({ planet }: PlanetCardProps) {
         }
     }, [planet.films]);
 
-    console.log(films)
 
     return (
-        <div className="w-full shadow-md rounded-lg p-6 mb-4 bg-gray-800 text-white text-center">
-            <Link href={`/planets/${id}`} className="text-blue-400 hover:underline mb-4 inline-block">
+        <div data-cy="planet-item" className="w-full shadow-md rounded-lg p-6 mb-4 bg-gray-800 text-white text-center">
+            <Link href={`/planets/${id}`} className="text-blue-400 hover:underline mb-4 inline-block" data-cy="planet-detail-link">
                 See details about the planet
             </Link>
             <h2 className="text-2xl font-semibold mb-2">{planet.name}</h2>
