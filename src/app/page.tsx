@@ -1,12 +1,12 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import type { ApiResponse } from "@/app/interfaces";
+import type {ApiResponse, Planet} from "@/app/interfaces";
 import {SearchBar} from "@/app/components/SearchBar";
 import {PlanetList} from "@/app/components/PlanetList";
 
 export default function Home() {
-    const [planets, setPlanets] = useState<any[]>([]);
+    const [planets, setPlanets] = useState<Planet[]>([]);
     const [nextUrl, setNextUrl] = useState<string | null>(null);
     const [prevUrl, setPrevUrl] = useState<string | null>(null);
     const [searchTerm, setSearchTerm] = useState<string>("");
